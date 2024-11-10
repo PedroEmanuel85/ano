@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Surpresa para Você</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7e6e6;
+            font-family: Arial, sans-serif;
+            color: #d6336c;
+        }
+        .message {
+            font-size: 1.5em;
+            width: 80%;
+            max-width: 600px;
+            border: 2px solid #d6336c;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            white-space: pre-wrap; /* Permite quebra de linha sem usar <br> */
+        }
+    </style>
+</head>
+<body>
+    <div class="message" id="message"></div>
+
+    <script>
+        const messageText = `
+Camila,
+
+Sei que palavras são poucas para descrever tudo que você significa para mim. 
+Cada momento desde que te conheçi me faz sentir especial e grato por te ter na minha vida.
+
+Você é a garota mais incrível, e eu me sinto o cara mais sortudo por ter te conhecido. 
+Espero sempre te fazer sorrir e estar aqui para o que você precisar.
+
+Te amo Camila!!
+        `;
+
+        let index = 0;
+        const speed = 50;
+
+        function typeWriter() {
+            if (index < messageText.length) {
+                document.getElementById("message").innerHTML += messageText.charAt(index);
+                index++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+</body>
+</html>
